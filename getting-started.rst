@@ -122,31 +122,35 @@ Don't forget to :code:`chmod +x start.sh` and :code:`chmod +x kill.sh`.
 
 Then you can create two desktop files for these scripts to show up among your apps:
 
-:code:`~/.local/share/applications/aw-start.desktop`:
+:code:`aw-start.desktop`:
 ::
 
   [Desktop Entry]
-  Name=Start ActivityWatch
+  Name=ActivityWatch Start
   Comment=Start AW
-  Exec=~/.local/opt/activitywatch/start.sh
+  Exec=/home/YOUR_LOGIN/.local/opt/activitywatch/start.sh
   Hidden=false
   Terminal=false
   Type=Application
   Version=1.0
-  Icon=activitywatch
+  Icon=/home/YOUR_LOGIN/.local/opt/activitywatch/logo.png
   Categories=Utility;
 
 
-:code:`~/.local/share/applications/aw-kill.desktop`:
+:code:`aw-kill.desktop`:
 ::
 
   [Desktop Entry]
-  Name=Kill ActivityWatch
+  Name=ActivityWatch Kill
   Comment=Kill AW
-  Exec=~/.local/opt/activitywatch/kill.sh
+  Exec=/home/YOUR_LOGIN/.local/opt/activitywatch/kill.sh
   Hidden=false
   Terminal=false
   Type=Application
   Version=1.0
-  Icon=activitywatch
+  Icon=/home/YOUR_LOGIN/.local/opt/activitywatch/logo.png
   Categories=Utility;
+
+
+Replace `YOUR_LOGIN` with you Linux account name in the two scripts.
+Then run `xdg-desktop-menu install --mode user aw-*.desktop` to install both applications.
